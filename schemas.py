@@ -33,11 +33,12 @@ class PostBase(BaseModel):
     content: str = Field(min_length=1)
 
 class PostCreate(PostBase):
-    user_id: int
+    pass
+
 
 class PostUpdate(BaseModel):
     title: str | None = Field(default=None, min_length=1, max_length=100)
-    content: str = Field(default=None, min_length=1)
+    content: str | None = Field(default=None, min_length=1)
 
 class PostResponse(PostBase):
     model_config = ConfigDict(from_attributes=True)
